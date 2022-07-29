@@ -1,0 +1,16 @@
+<div class="section__title">Skills</div>
+<div class="skills">
+  <div class="skills__item" *ngFor="let skill of skills | keyvalue">
+    <div class="left">
+      <div class="name">{{ skill.key }}</div>
+    </div>
+    <div class="right">
+      <ng-container *ngFor="let n of counter(5); let idx = index">
+        <input id="ck{{idx}}" type="checkbox" [checked]="idx + 1 <= skill.value"  disabled/>
+
+        <label for="ck{{idx}}"></label>
+      </ng-container>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="section__title">Education</div>
+<div class="section__list">
+  <div class="section__list-item" *ngFor="let ed of educations">
+    <div class="left">
+      <div class="name">{{ed.university}}</div>
+      <div class="addr">{{ed.city}}</div>
+      <div class="duration">{{ed.date.start | date:'MMM y'}} - {{ed.date.end | date:'MMM  y'}}</div>
+    </div>
+    <div class="right">
+      <div class="name">{{ed.title}}</div>
+      <div class="desc">{{ed.desc}}</div>
+    </div>
+  </div>
+ 
+
+</div>
