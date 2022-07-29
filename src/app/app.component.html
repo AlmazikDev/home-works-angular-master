@@ -1,0 +1,10 @@
+<div class="container mx-auto px-5 py-5">
+  <div class="grid shadow-md grid-cols-3 divide-x-2 bg-green-300 divide-white rounded-md	overflow-hidden" >
+    <button class="py-3 hover:bg-green-200" [class.bg-slate-300]="selectIdData === idx" *ngFor="let d of data; let idx = index" (click)="selectData(idx)">{{d.name | uppercase}}</button>
+  </div>
+  <div class="p-4 border-dashed border-2 border-slate-300	 mt-5">
+    <p class="text-5xl my-3 font-bold ">{{data[selectIdData].title | uppercase}}</p>
+    <img class="w-[500px] shadow-md my-3 rounded-md" src="{{data[selectIdData].img}}" alt="" srcset="">
+    <p class="text-lg my-3">{{data[selectIdData].desc}}</p>
+  </div>
+</div>
