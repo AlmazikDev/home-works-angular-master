@@ -1,0 +1,29 @@
+<header class="flex w-full h-24 bg-green-400 px-4 items-center justify-center">
+  <img src="../assets/angular.png" class="h-full" alt="" />
+  <p class="text-lg text-white ml-5">{{ title }}</p>
+</header>
+
+<main class="container mx-auto py-8">
+  <section>
+    <p class="text-center mb-9 flex justify-center items-center">
+      Read time: {{ time }} minutes
+    </p>
+
+    <ng-container *ngTemplateOutlet="loadTemplate()"> </ng-container>
+    <ng-template #readOnlyTemplate>
+      <p
+        (click)="editState = !editState"
+        appReadTime
+        (time)="setTime($event)"
+        class="text-center text-base cursor-pointer p-2 rounded-md  hover:shadow-md"
+        title="РЕДАКТИРОВАТЬ"
+      >
+        {{ text }}
+      </p>
+    </ng-template>
+    <ng-template #editTemplate>
+      <textarea #textarea class="w-full h-[200px] p-4 border " [(ngModel)]="text"></textarea>
+      <button class="border px-2 py-1" (click)="saveText()">Save</button>
+    </ng-template>
+  </section>
+</main>
